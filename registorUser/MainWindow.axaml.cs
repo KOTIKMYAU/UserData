@@ -1,9 +1,6 @@
 using Avalonia.Controls;
-using Avalonia.Platform.Storage;
 using Avalonia.Interactivity;
 using System.IO;
-
-
 
 namespace registorUser;
 
