@@ -1,0 +1,53 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="registorUser.MainWindow"
+        Title="registorUser">
+        <StackPanel>
+                <StackPanel>
+                        <TextBox Name="FirstName" Watermark="Введите Имя: "/>
+                        <TextBox Name="LastName" Watermark="Введите Фамилию: "/>
+                        <TextBox Name="Surname" Watermark="Введите Отчество(необезательно): "/>
+                        
+                        <StackPanel Margin="0 0 0 20">
+                                <TextBlock>Какого вы пола?</TextBlock>
+                        <RadioButton Name="Povestka1" GroupName="Sex" Content="Мужчина"/>
+                        <RadioButton Name="Povestka2" GroupName="Sex" Content="Женщина"/>
+                        
+                        </StackPanel>
+                        
+                        <StackPanel Margin="0 0 0 0">
+                                <TextBlock>Вам есть 18?(если нет оставьте пустым)</TextBlock>
+                                <CheckBox Name="AgeHave" Content="Есть"/>
+                                
+                        </StackPanel>
+                        <TextBlock Name="ErrorName" Foreground="Red" FontSize="12"/>
+                        <TextBlock Name="ErrorPovestka" Foreground="Red" FontSize="12"/>
+                </StackPanel>
+                <Button Height="30" Width="250" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Content="Зарегистрироваться" Click="Button_OnClick_SaveData"/>
+                
+                <StackPanel>
+                        <TextBlock FontSize="15">Мы узнали тебя (:</TextBlock>
+                        <TextBlock>Имя:</TextBlock>
+                        <TextBlock Name="UserName"> </TextBlock>
+                
+                        <TextBlock>Фамилия:</TextBlock>
+                        <TextBlock Name="UserLastName"> </TextBlock>
+                
+                        <TextBlock>Отчество:</TextBlock>
+                        <TextBlock Name="UserSurname"> </TextBlock>
+                
+                        <TextBlock>Пол:</TextBlock>
+                        <TextBlock Name="Povestka"/>
+                
+                        <TextBlock>Возраст:</TextBlock>
+                        <TextBlock Name="UserAge"> </TextBlock>
+                </StackPanel>
+                
+        </StackPanel>
+        
+        
+        
+</Window>
