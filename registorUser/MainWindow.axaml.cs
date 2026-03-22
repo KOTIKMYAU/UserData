@@ -26,11 +26,11 @@ public partial class MainWindow : Window
         var UserSexFile = File.ReadAllText(FilePath3);
         var UserAgeFile = File.ReadAllText(FilePath4);
         
-        UserName.Text =  UserNameFile;
-        UserLastName.Text = UserLastNameFile;
-        UserSurname.Text = UserSurnameFile;
-        Povestka.Text = UserSexFile;
-        UserAge.Text = UserAgeFile;
+        UserName.Text =  UserNameFile.Trim();
+        UserLastName.Text = UserLastNameFile.Trim();
+        UserSurname.Text = UserSurnameFile.Trim();
+        Povestka.Text = UserSexFile.Trim();
+        UserAge.Text = UserAgeFile.Trim();
     }
     
 
@@ -56,12 +56,6 @@ private void Button_OnClick_SaveData(object? sender, RoutedEventArgs e)
             File.WriteAllText(FilePath2, UserSurname.Text);
         }
         
-        
-        var povestka = Povestka.Text;
-        var age = UserAge.Text;
-        
-        
-        
         // First Name IF
         if (FirstName.Text == string.Empty)
         {
@@ -75,8 +69,12 @@ private void Button_OnClick_SaveData(object? sender, RoutedEventArgs e)
         }
         else
         {
-            UserName.Text = firstName;
-            File.WriteAllText(FilePath, UserName.Text);
+            UserName.Text = firstName.Trim();
+            if (firstName != string.Empty)
+            {
+                File.WriteAllText(FilePath, UserName.Text);
+            }
+
             ErrorName.Text = string.Empty;
             FirstName.Text = string.Empty;
         }
@@ -94,7 +92,7 @@ private void Button_OnClick_SaveData(object? sender, RoutedEventArgs e)
         }
         else
         {
-            UserLastName.Text = lastName;
+            UserLastName.Text = lastName.Trim();
             File.WriteAllText(FilePath1, UserLastName.Text);
             LastName.Text = string.Empty;
             ErrorName.Text = string.Empty;
